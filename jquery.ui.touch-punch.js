@@ -13,6 +13,10 @@
  * Depends:
  * jquery.ui.widget.js
  * jquery.ui.mouse.js
+ *
+ * @licence MIT
+ * @licence GPL-2.0-only
+ * @preserve
  */
 
 (function( factory ) {
