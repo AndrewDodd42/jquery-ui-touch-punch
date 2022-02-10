@@ -3,12 +3,14 @@
  * based on original touchpunch v0.2.3 which has not been updated since 2014
  *
  * Updates by RWAP Software to take account of various suggested changes on the original code issues
+ * Further updates by Mutiny Limited
  *
  * Original: https://github.com/furf/jquery-ui-touch-punch
  * Copyright 2011–2014, Dave Furfero
  * Dual licensed under the MIT or GPL Version 2 licenses.
  *
  * Fork: https://github.com/RWAP/jquery-ui-touch-punch
+ * Fork: https://github.com/AndrewDodd42/jquery-ui-touch-punch
  *
  * Depends:
  * jquery.ui.widget.js
