@@ -121,8 +121,11 @@
     // Track movement to determine if interaction was a click
     self._startPos = getTouchCoords(event);
 
+	  // HACK: Check for iframeFix option and prevent _mouseCapture from being called twice.
+	  var iframeFix = self.options && self.options.iframeFix;
+
     // Ignore the event if another widget is already being handled
-    if (touchHandled || !self._mouseCapture(event.originalEvent.changedTouches[0])) {
+    if (touchHandled || (!iframeFix && !self._mouseCapture(event.originalEvent.changedTouches[0]))) {
       return;
     }
 
