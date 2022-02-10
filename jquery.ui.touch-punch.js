@@ -173,20 +173,17 @@
 
     // If the touch interaction did not move, it should trigger a click
     // Check for this in two ways - length of time of simulation and distance moved
-    // Allow for Apple Stylus to be used also
     var timeMoving = event.timeStamp - this._startedMove;
-    if (!this._touchMoved || timeMoving < 500) {
+    if (!this._touchMoved || timeMoving < 250) {
         // Simulate the click event
         simulateMouseEvent(event, 'click');
     } else {
       var endPos = getTouchCoords(event);
+      // If the touch interaction did not move, it should trigger a click
+      // Apple Stylus does not need to be explicitly checked for as we don't look at _touchMoved now.
       if ((Math.abs(endPos.x - this._startPos.x) < 10) && (Math.abs(endPos.y - this._startPos.y) < 10)) {
-
-          // If the touch interaction did not move, it should trigger a click
-          if (!this._touchMoved || event.originalEvent.changedTouches[0].touchType === 'stylus') {
-              // Simulate the click event
-              simulateMouseEvent(event, 'click');
-          }
+        // Simulate the click event
+        simulateMouseEvent(event, 'click');
       }
     }
 
